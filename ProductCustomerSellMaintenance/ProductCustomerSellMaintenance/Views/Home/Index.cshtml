@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ProductCustomerSellMaintenance.Models.SellModel>
+@{
+    ViewBag.Title = "Index";
+}
+<html> 
+
+    <head> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+
+    <body>      
+     @using (Html.BeginForm("AddSell", "Sells", FormMethod.Post))
+    {
+        @Html.DropDownList("Customers", ViewBag.CustomerList as SelectList, "Customer Name")
+        <br />
+        @Html.DropDownList("Products", ViewBag.ProductList as SelectList, "Product Name")
+        <br />
+         
+        <input id="Quantity" name="Quantity" type="text" />
+        <br />
+        <input type="submit" value="Create" />
+    }
+        <div>
+            <p>
+                <a class="btn btn-primary" href="@Url.Action("AddCustomer","Customer")">Go to Add Customer</a>
+                <a class="btn btn-secondary" href="@Url.Action("AddProduct","Product")">Go to Add Product</a>
+                <a class="btn btn-success" href="@Url.Action("ShowTable","Home")">Sales List</a>
+            </p>
+        </div>
+                  
+        </body>        
+
+</html>
+   
+
+

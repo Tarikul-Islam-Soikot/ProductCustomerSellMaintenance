@@ -1,0 +1,29 @@
+﻿@model ProductCustomerSellMaintenance.Models.Customer
+@{
+    ViewBag.Title = "AddCustomer";
+}
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    @using (Html.BeginForm("AddCustomer", "Customer", FormMethod.Post))
+    {
+        @Html.TextBoxFor(model => model.CustomerName, new { placeholder = "Customer Name" })
+        <br />
+        @Html.TextBoxFor(model => model.Address, new { placeholder = "Address" })
+        <br />
+        @Html.TextBoxFor(model => model.MobileNo, new { placeholder = "Mobile No" })
+        <br />
+        <input value="Submit" type="Submit" />
+        <br />
+    }
+    <div>
+        <p>
+            <a class="btn btn-primary" href="@Url.Action("Create","Customer")">Customers List</a>
+            <a class="btn btn-secondary" href="@Url.Action("AddProduct","Product")">Go to Add Products</a>
+            <a class="btn btn-success" href="@Url.Action("Index","Home")">Go to Add Sales</a>
+        </p>
+    </div>
+    </body>
+</html>

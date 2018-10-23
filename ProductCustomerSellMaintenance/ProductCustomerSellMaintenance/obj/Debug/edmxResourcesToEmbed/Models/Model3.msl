@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SellMaintenanceModelStoreContainer" CdmEntityContainer="SalesEntities">
+    <EntitySetMapping Name="Sells">
+      <EntityTypeMapping TypeName="SellMaintenanceModel.Sell">
+        <MappingFragment StoreEntitySet="Sell">
+          <ScalarProperty Name="Customers" ColumnName="Customers" />
+          <ScalarProperty Name="Products" ColumnName="Products" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
